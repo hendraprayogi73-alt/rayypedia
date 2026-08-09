@@ -1,9 +1,10 @@
-<?php
+use App\Http\Controllers\Admin\SponsorController;
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+Route::prefix('admin')->group(function(){
 
-Route::get(
-    '/',
-    [HomeController::class,'index']
-);
+    Route::resource(
+        'sponsors',
+        SponsorController::class
+    );
+
+});
